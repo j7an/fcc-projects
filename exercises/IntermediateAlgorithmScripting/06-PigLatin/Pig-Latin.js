@@ -9,30 +9,30 @@ Input strings are guaranteed to be English words in all lowercase.
 */
 
 function translatePigLatin(str) {
-  var vowel = "aeiou";
-  var match = -1;
-  var index = -1;
+  const vowel = 'aeiou';
+  let match = -1;
+  let index = -1;
 
   // find index of first vowel
-  for (var x = 0; x < str.length && match < 0; x++) {
+  for (let x = 0; x < str.length && match < 0; x++) {
     match = vowel.indexOf(str.charAt(x));
     if (match >= 0) {
       index = x;
     }
   }
-  
+
   if (index > 0) {
-    str = str.slice(index) + str.substring(0, index) + "ay";
+    str = `${str.slice(index)}${str.substring(0, index)}ay`;
   } else {
-    str = str.slice(index) + str.substring(0, index) + "way";
+    str = `${str.slice(index)}${str.substring(0, index)}way`;
   }
 
   return str;
 }
 
-console.log(translatePigLatin("consonant"));
-console.log(translatePigLatin("california"));
-console.log(translatePigLatin("paragraphs"));
-console.log(translatePigLatin("glove"));
-console.log(translatePigLatin("algorithm"));
-console.log(translatePigLatin("eight"));
+console.log(translatePigLatin('consonant'));
+console.log(translatePigLatin('california'));
+console.log(translatePigLatin('paragraphs'));
+console.log(translatePigLatin('glove'));
+console.log(translatePigLatin('algorithm'));
+console.log(translatePigLatin('eight'));
