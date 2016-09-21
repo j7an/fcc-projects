@@ -15,15 +15,15 @@ Array.prototype.reduce()
 */
 
 function sumAll(arr) {
-  let rangeNum = [];
-  let max = Math.max.apply(null, arr);
-  let min = Math.min.apply(null, arr);
+  const rangeNum = [];
+  const max = Math.max.apply(null, arr);
+  const min = Math.min.apply(null, arr);
 
   for (let i = min; i <= max; i++) {
     rangeNum.push(i);
   }
 
-  return rangeNum.reduce(function (prev, curr) {
+  return rangeNum.reduce((prev, curr) => {
     return prev + curr;
   });
 }
