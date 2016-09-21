@@ -1,6 +1,7 @@
 /* JavaScript File
 
-We'll pass you an array of two numbers. Return the sum of those two numbers and all numbers between them.
+We'll pass you an array of two numbers. Return the sum of those two numbers and
+all numbers between them.
 
 The lowest number will not always come first.
 
@@ -17,17 +18,16 @@ function sumAll(arr) {
   let rangeNum = [];
   let max = Math.max.apply(null, arr);
   let min = Math.min.apply(null, arr);
-  
-  for (var i = min; i <= max; i++) {
-      rangeNum.push(i);
+
+  for (let i = min; i <= max; i++) {
+    rangeNum.push(i);
   }
 
-  return rangeNum.reduce(function(prev, curr) {
-      return prev + curr;
+  return rangeNum.reduce(function (prev, curr) {
+    return prev + curr;
   });
-
 }
-// sumAll([1, 4]);
+
 console.log(sumAll([1, 4]));
 console.log(sumAll([4, 1]));
 console.log(sumAll([5, 10]));
