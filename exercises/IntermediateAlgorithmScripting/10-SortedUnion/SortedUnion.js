@@ -8,21 +8,13 @@ The unique numbers should be sorted by their original order, but the final array
 should not be sorted in numerical order.
 */
 
-function uniteUnique(arr) {
-  let array = [];
-
-  for (let x = 0; x < arguments.length; x += 1) {
-    array.push(arguments[x]);
-  }
-
-  arr = array.reduce((a, b) => {
-    return a.concat(b);
-  });
+function uniteUnique(...arr) {
+  arr = arr.reduce((a, b) => a.concat(b));
 
   function uniq(a) {
     return Array.from(new Set(a));
   }
-  
+
   arr = uniq(arr);
   console.log(arr);
   return arr;
