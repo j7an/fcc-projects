@@ -14,7 +14,7 @@ function translatePigLatin(str) {
   let index = -1;
 
   // find index of first vowel
-  for (let x = 0; x < str.length && match < 0; x++) {
+  for (let x = 0; x < str.length && match < 0; x += 1) {
     match = vowel.indexOf(str.charAt(x));
     if (match >= 0) {
       index = x;

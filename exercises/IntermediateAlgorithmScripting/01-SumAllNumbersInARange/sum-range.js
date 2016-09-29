@@ -19,7 +19,7 @@ function sumAll(arr) {
   const max = Math.max.apply(null, arr);
   const min = Math.min.apply(null, arr);
 
-  for (let i = min; i <= max; i++) {
+  for (let i = min; i <= max; i += 1) {
     rangeNum.push(i);
   }
 

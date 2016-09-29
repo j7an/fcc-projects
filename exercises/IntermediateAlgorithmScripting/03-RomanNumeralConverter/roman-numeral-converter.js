@@ -8,7 +8,7 @@ function convertToRoman1(num) {
   const romanNumeral = ['M', 'CM', 'D', 'CD', 'C', 'XC', 'L', 'XL', 'X', 'IX', 'V', 'IV', 'I'];
   let romanized = '';
 
-  for (let index = 0; index < decimalValue.length; index++) {
+  for (let index = 0; index < decimalValue.length; index += 1) {
     while (decimalValue[index] <= num) {
       romanized += romanNumeral[index]; // Add largest roman numeral from left to right
       num -= decimalValue[index]; // subtract largest decimalValue from left to right
@@ -37,7 +37,7 @@ function convertToRoman2(num) {
 
   let romanized = '';
 
-  for (let index = 0; index < decimalRoman.length; index++) {
+  for (let index = 0; index < decimalRoman.length; index += 1) {
     while (decimalRoman[index].dec <= num) {
       romanized += decimalRoman[index].roman;
       num -= decimalRoman[index].dec;

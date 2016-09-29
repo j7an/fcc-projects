@@ -34,7 +34,6 @@ function pairElement(str) {
     }
   }
 
-  // split.forEach(function(element) {
   split.forEach((element) => {
     basePair = pair(element);
     str.push([element, basePair]);
