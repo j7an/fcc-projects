@@ -19,9 +19,9 @@ function sumFibs(num) {
     curr += prev;
     prev = curr - prev;
   }
-  num = total;
+  // num = total;
   console.log(num);
-  return num = total;
+  return total;
 }
 
 sumFibs(1);
