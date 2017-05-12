@@ -10,26 +10,39 @@ evenly divisible by all numbers between 1 and 3.
 */
 
 function smallestCommons(arr) {
-  // find common multiple : create an array between the two values
-  // console.log(arr);
-  const min = Math.min.apply(this, arr);
-  const max = Math.max.apply(this, arr);
-  // console.log(min, max);
-  // sort from biggest to smallest
-  let num = [];
-  for (let i = max; i >= min; i -= 1) {
-    num.push(i);
+
+  // sort initial array from biggest to smallest
+  arr.sort(function(a, b) {
+    return b - a; // descending order
+  })
+  console.log(arr);
+
+  // fill in missing numbers between the two initial values in arr
+  let newArr = [];
+  for (let n = arr[0]; n >= arr[1]; n--) {
+    newArr.push(n);
   }
-  console.log(num);
+  console.log(newArr);
 
-  // start calculating common multiple from largest values
-  // once common multiple is found, try next lower value for same common multiple
-  // if not common multiple, start over with next common multiple of top two values
-  // if common multiple, try next lower value again and so on
+  let lcm = 0; // lowest common multiple
+  let loop = 1;
+  let n; // array index
 
-  return arr;
+  while (n !== newArr.length) {
+    lcm = newArr[0] * loop * newArr[1];
+
+    for (n = 2; n < newArr.length; n++) {
+      if (lcm % newArr[n] !== 0) {
+        break;
+      }
+    }
+
+    loop++;
+  }
+  console.log(lcm);
+
+  return lcm;
 }
-
 
 smallestCommons([1,5]);
 smallestCommons([5, 1]);
