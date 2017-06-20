@@ -5,34 +5,16 @@ Remember, you can access object properties through either dot notation or [] not
 */
 
 function truthCheck(collection, pre) {
-    // Is everyone being true?
-    //   console.log(collection);
-    // collection.forEach(function(element) {
-    //     console.log(element);
-    //     console.log(element.sex);
-    //     console.log(element[pre]);
-    //     if (element[pre]) {
-    //         console.log(true);
-    //     } else {
-    //         console.log(false);
-    //     }
-    // })
     var status;
     for (var i = 0; i < collection.length; i++) {
-        // console.log(collection[i]);
+
         if (collection[i][pre]) {
-            // console.log(collection[i]);
-            // console.log(true);
             status = true;
         } else {
-            // console.log(collection[i]);
-            // console.log(false);
             status = false;
             break;
         }
     }
-    // console.log(pre);
-    // return pre;
     console.log(collection);
     console.log(status);
     return status;
